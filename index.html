@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            max-width: 200px;
+        }
+
+        button {
+            max-width: 200px;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px black solid;
+            border-collapse: collapse;
+        }
+
+        #answer1,
+        #answer2 {
+            border: 1px black solid;
+            max-width: fit-content;
+            max-height: fit-content;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form action="" style="display: flex; flex-wrap: wrap; flex-direction: column;" onsubmit="calculate()">
+
+        <label for="a">Input value a:</label><input type="number" value="1.1" name="a" id="a" required
+            autocomplete="off">
+        <label for="b">Input value b:</label><input type="number" value="0.004" name="b" id="b" required
+            autocomplete="off">
+        <label for="x">Input value x:</label><input type="number" value="0.2" name="x" id="x" required
+            autocomplete="off">
+        <button id="submit1" type="submit">Submit</button>
+
+    </form>
+
+    <div id="answer1"></div>
+
+    <form action="" style="display: flex; flex-wrap: wrap; flex-direction: column;" onsubmit="calculateArray()">
+
+        <label for="a">Input value a:</label><input type="number" max="50" name="a" id="numberOfElements" required
+            autocomplete="off">
+
+        <button id="submit2" type="submit">Submit</button>
+    </form>
+
+
+    <div id="answer2">
+        <table id="table">
+            <thead>
+                <tr>
+                    <td>Index</td>
+                    <td>p[i]</td>
+                    <td>a[i]</td>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+
+        <div id="sum"></div>
+    </div>
+
+
+    <script>
+        document.getElementById('numberOfElements').value = Math.floor(Math.random() * 50) + 1
+    </script>
+    <script src="index.js"></script>
+</body>
+
+
+</html>
